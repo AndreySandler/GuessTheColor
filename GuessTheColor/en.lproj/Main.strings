@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; configuration.title = "Yes!"; ObjectID = "Beh-Q5-wx0"; */
+"Beh-Q5-wx0.configuration.title" = "Yes!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Beh-Q5-wx0"; */
+"Beh-Q5-wx0.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "CFF-JI-6b9"; */
+"CFF-JI-6b9.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CFF-JI-6b9"; */
+"CFF-JI-6b9.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "Gsh-2k-j8w"; */
+"Gsh-2k-j8w.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Gsh-2k-j8w"; */
+"Gsh-2k-j8w.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Guess the color?"; ObjectID = "XU5-aN-dPn"; */
+"XU5-aN-dPn.text" = "Guess the color?";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "gSY-bH-uJ2"; */
+"gSY-bH-uJ2.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gSY-bH-uJ2"; */
+"gSY-bH-uJ2.normalTitle" = "Button";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUB-ce-5uT">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,9 +10,63 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="UQO-Xb-jwX">
+            <objects>
+                <viewController id="zUB-ce-5uT" customClass="ViewController" customModule="GuessTheColor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rvs-wF-jq9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beh-Q5-wx0">
+                                <rect key="frame" x="16" y="499" width="288" height="49"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Yes!">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="a2t-v3-7uF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the color?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU5-aN-dPn">
+                                <rect key="frame" x="16" y="245" width="288" height="79.5"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79.5" id="TiO-Ia-oed"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="34"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FYU-5X-pXr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FYU-5X-pXr" firstAttribute="bottom" secondItem="Beh-Q5-wx0" secondAttribute="bottom" constant="20" id="1kp-Be-WDC"/>
+                            <constraint firstItem="XU5-aN-dPn" firstAttribute="leading" secondItem="Rvs-wF-jq9" secondAttribute="leading" constant="16" id="7nz-Pe-CEk"/>
+                            <constraint firstItem="Beh-Q5-wx0" firstAttribute="leading" secondItem="FYU-5X-pXr" secondAttribute="leading" constant="16" id="TVJ-ME-d7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="XU5-aN-dPn" secondAttribute="trailing" constant="16" id="U4w-Xp-zxg"/>
+                            <constraint firstItem="XU5-aN-dPn" firstAttribute="top" secondItem="FYU-5X-pXr" secondAttribute="top" constant="245" id="hh4-Su-Qzj"/>
+                            <constraint firstItem="FYU-5X-pXr" firstAttribute="trailing" secondItem="Beh-Q5-wx0" secondAttribute="trailing" constant="16" id="yyp-hV-a22"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="XU5-aN-dPn" id="E6L-ic-0Sb"/>
+                        <outlet property="startButton" destination="Beh-Q5-wx0" id="cv5-gA-L2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BA9-6z-yMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-656" y="-2"/>
+        </scene>
+        <!--Second View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheColor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SecondViewController" customModule="GuessTheColor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +102,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="94.5" height="19"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="redButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="K9j-j0-pwi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFF-JI-6b9">
                                         <rect key="frame" x="96.5" y="0.0" width="95" height="19"/>
@@ -56,11 +113,17 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="yellowButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aV7-zp-AeV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSY-bH-uJ2">
                                         <rect key="frame" x="193.5" y="0.0" width="94.5" height="19"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="greenButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kod-Tn-9jj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -76,6 +139,15 @@
                             <constraint firstItem="sBu-Xu-vD2" firstAttribute="top" secondItem="IKO-Q0-8w3" secondAttribute="bottom" constant="133.5" id="rj3-HR-wYE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XFO-9g-GXf"/>
+                    <connections>
+                        <outlet property="greenButton" destination="gSY-bH-uJ2" id="uhR-cO-iki"/>
+                        <outlet property="greenView" destination="7mI-kl-hEr" id="0vo-OD-r9V"/>
+                        <outlet property="redButton" destination="Gsh-2k-j8w" id="TLJ-eo-BgE"/>
+                        <outlet property="redView" destination="Hjg-xi-NN3" id="fMC-Td-RL7"/>
+                        <outlet property="yellowButton" destination="CFF-JI-6b9" id="XOI-pv-CQV"/>
+                        <outlet property="yellowView" destination="QDf-O4-r8s" id="QF3-B6-XXd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,6 +155,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
