@@ -38,6 +38,10 @@ class SecondViewController: UIViewController {
         nextButton.layer.cornerRadius = 10
     }
     
+    override func viewDidLayoutSubviews() {
+        colorfulView.layer.cornerRadius = colorfulView.frame.width / 2
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showThird" else { return }
         guard let destination = segue.destination as? ThirdViewController else { return }
