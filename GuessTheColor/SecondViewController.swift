@@ -9,11 +9,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    @IBOutlet var redView: UIView!
-    @IBOutlet var yellowView: UIView!
-    @IBOutlet var greenView: UIView!
+    @IBOutlet var colorfulView: UIView!
     
-    @IBOutlet var colorStackView: UIStackView!
     @IBOutlet var buttonsStackView: UIStackView!
     
     @IBOutlet var redButton: UIButton!
@@ -59,6 +56,9 @@ class SecondViewController: UIViewController {
         case .red:
             resultLabel.text = "Good"
             successCounter += 1
+            colorfulView.backgroundColor = .systemRed
+            nextButton.backgroundColor = .systemGreen
+            colorfulView.isHidden = false
         case .yellow, .green:
             resultLabel.text = "Try again"
             failCounter += 1
@@ -76,6 +76,9 @@ class SecondViewController: UIViewController {
         case .yellow:
             resultLabel.text = "Good"
             successCounter += 1
+            colorfulView.backgroundColor = .systemYellow
+            nextButton.backgroundColor = .systemGreen
+            colorfulView.isHidden = false
         case .red, .green:
             resultLabel.text = "Try again"
             failCounter += 1
@@ -93,6 +96,9 @@ class SecondViewController: UIViewController {
         case .green:
             resultLabel.text = "Good"
             successCounter += 1
+            colorfulView.backgroundColor = .systemGreen
+            nextButton.backgroundColor = .systemGreen
+            colorfulView.isHidden = false
         case .red, .yellow:
             resultLabel.text = "Try again"
             failCounter += 1
@@ -102,17 +108,17 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func nextButtonDidTapped() {
-        colorStackView.isHidden = false
+        colorfulView.isHidden = true
         buttonsStackView.isHidden = false
         nextButton.isHidden = true
         resultLabel.isHidden = true
+        nextButton.backgroundColor = .systemRed
         currentColor = CurrentColor.allCases.randomElement()
     }
     
     private func setupInterface() {
         nextButton.isHidden = false
         resultLabel.isHidden = false
-        colorStackView.isHidden = true
         buttonsStackView.isHidden = true
     }
     
