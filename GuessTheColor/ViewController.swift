@@ -17,11 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         greetingLabel.layer.masksToBounds = true
         greetingLabel.layer.cornerRadius = 30
-        
-        
-        
     }
-
-
 }
 
