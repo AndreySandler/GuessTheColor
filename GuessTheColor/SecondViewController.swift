@@ -9,6 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet var colorfulView: UIView!
     
     @IBOutlet var buttonsStackView: UIStackView!
@@ -30,6 +31,7 @@ class SecondViewController: UIViewController {
     private var currentColor = CurrentColor.allCases.randomElement()
     private var choice = true
     
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         redButton.layer.cornerRadius = 10
@@ -44,13 +46,14 @@ class SecondViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showThird" else { return }
-        guard let destination = segue.destination as? ThirdViewController else { return }
+        guard let thirdVC = segue.destination as? ThirdViewController else { return }
         
-        destination.totalCounter = totalCounter
-        destination.successCounter = successCounter
-        destination.failCounter = failCounter
+        thirdVC.totalCounter = totalCounter
+        thirdVC.successCounter = successCounter
+        thirdVC.failCounter = failCounter
     }
     
+    // MARK: - IBActions
     @IBAction func redButtonDidTapped() {
         totalCounter += 1
         
@@ -120,6 +123,15 @@ class SecondViewController: UIViewController {
         currentColor = CurrentColor.allCases.randomElement()
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let thirdVS = segue.source as? ThirdViewController else { return }
+        
+        thirdVS.totalCounter = totalCounter
+        thirdVS.successCounter = successCounter
+        thirdVS.failCounter = failCounter
+    }
+    
+    // MARK: - Private Methods
     private func setupInterface() {
         nextButton.isHidden = false
         resultLabel.isHidden = false
@@ -128,6 +140,7 @@ class SecondViewController: UIViewController {
     
 }
 
+// MARK: - UIViewController
 extension SecondViewController {
     private enum CurrentColor: CaseIterable {
         case red, yellow, green

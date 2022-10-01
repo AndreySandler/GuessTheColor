@@ -230,7 +230,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="EIe-wd-1WE"/>
+                                    <segue destination="Gfp-az-6oM" kind="unwind" unwindAction="unwindFor:" id="iqK-77-rCN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -253,13 +253,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVf-rM-Lgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Gfp-az-6oM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="813" y="-3"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="EIe-wd-1WE"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
